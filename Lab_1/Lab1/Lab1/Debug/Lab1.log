@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\user\Desktop\Education\Лабораторні (АСД-2)\Лабораторна №1\Lab1\Lab1\main.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\user\Desktop\Education\Лабораторні (АСД-2)\Лабораторна №1\Lab1\Lab1\main.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Lab1.vcxproj -> C:\Users\user\Desktop\Education\Лабораторні (АСД-2)\Лабораторна №1\Lab1\Debug\Lab1.exe
