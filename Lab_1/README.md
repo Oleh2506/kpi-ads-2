@@ -71,3 +71,59 @@ end CombSort
 Середній випадок: Ω(n^2)
 Гірший випадок: O(n^2)
 ```
+
+## Програмна реалізація алгоритму
+
+### Вихідний код
+
+#### Сортування бульбашкою
+```
+void BubbleSort(int* const arr, const int SIZE) {
+	for (size_t i{ 0 }; i < SIZE - 1; ++i) {
+		for (size_t j{ 0 }; j < SIZE - 1; ++j) {
+			if (arr[j] > arr[j + 1]) {
+				std::swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+```
+#### Сортування гребінцем
+```
+void CombSort(int* const arr, const int SIZE) {
+	const float shrink_factor{ 1.2473309 };
+	int gap{ SIZE };
+	bool swapped{ true };
+
+	while (gap > 1 || swapped) {
+		gap = static_cast <int> (static_cast <float> (gap) / shrink_factor);
+		gap = gap > 1 ? gap : 1;
+
+		swapped = false;
+		for (size_t i{ 0 }; i < SIZE - gap; ++i) {
+			if (arr[i] > arr[i + gap]) {
+				std::swap(arr[i], arr[i + gap]);
+				swapped = true;
+			}
+		}
+	}
+}
+```
+### Приклад роботи
+
+#### Сортування бульбашкою
+
+##### Сортування масиву на 100 елементів
+![Bubble sort of 100 elements](assets/image3.png)
+
+##### Сортування масиву на 1000 елементів
+![Bubble sort of 1000 elements](assets/image4.png)
+
+#### Сортування гребінцем
+
+
+##### Сортування масиву на 100 елементів
+![Comb sort of 100 elements](assets/image5.png)
+
+##### Сортування масиву на 1000 елементів
+![Comb sort of 1000 elements](assets/image6.png)
